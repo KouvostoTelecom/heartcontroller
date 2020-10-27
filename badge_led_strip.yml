@@ -1,0 +1,42 @@
+esphome:
+  name: "tv_led"
+  platform: ESP32
+  board: esp-wrover-kit
+
+wifi:
+  ssid: "SSID"
+  password: "PASSWORD"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Fallback Hotspot"
+    password: "PASSWORD"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+light:
+  - platform: fastled_clockless
+    chipset: WS2812
+    pin: GPIO26
+    num_leds: 250
+    rgb_order: GRB
+    name: "External LED strip"
+    effects:
+      - addressable_rainbow:
+      - strobe:
+      - random:
+      - flicker:
+      - addressable_color_wipe:
+      - addressable_scan:
+      - addressable_twinkle:
+      - addressable_random_twinkle:
+      - addressable_fireworks:
+      - addressable_flicker:
