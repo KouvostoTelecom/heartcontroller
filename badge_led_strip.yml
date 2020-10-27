@@ -1,5 +1,5 @@
 esphome:
-  name: "tv_led"
+  name: "disobey2019"
   platform: ESP32
   board: esp-wrover-kit
 
